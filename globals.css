@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 262 55% 10%; /* Equivalent to #1d102f */
+    --foreground: 240 10% 80%; /* Equivalent to text-gray-300 */
+
+    --primary: 45 93% 56%; /* Equivalent to #facc15 (yellow-400) */
+    --primary-foreground: 262 55% 10%;
+
+    /* Keeping other variables for potential future use with shadcn */
+    --card: 255 10% 15%;
+    --card-foreground: 240 10% 90%;
+    --popover: 255 10% 10%;
+    --popover-foreground: 240 10% 90%;
+    --secondary: 255 10% 20%;
+    --secondary-foreground: 240 10% 90%;
+    --muted: 255 10% 25%;
+    --muted-foreground: 240 10% 60%;
+    --accent: 48 96% 54%;
+    --accent-foreground: 262 55% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 255 10% 25%;
+    --input: 255 10% 30%;
+    --ring: 45 93% 56%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 262 55% 10%;
+    --foreground: 240 10% 80%;
+    --primary: 45 93% 56%;
+    --primary-foreground: 262 55% 10%;
+    --card: 255 10% 15%;
+    --card-foreground: 240 10% 90%;
+    --popover: 255 10% 10%;
+    --popover-foreground: 240 10% 90%;
+    --secondary: 255 10% 20%;
+    --secondary-foreground: 240 10% 90%;
+    --muted: 255 10% 25%;
+    --muted-foreground: 240 10% 60%;
+    --accent: 48 96% 54%;
+    --accent-foreground: 262 55% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 255 10% 25%;
+    --input: 255 10% 30%;
+    --ring: 45 93% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-color: #1d102f;
+    background-image: radial-gradient(at 90% 20%, #581c87 0%, #1d102f 50%);
+    background-repeat: no-repeat;
+  }
+}
+
+.animated-gradient-text {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary) / 0.8),
+    #fde047,
+    #ffffff,
+    #fde047,
+    hsl(var(--primary) / 0.8)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-flow-animation 10s linear infinite;
+}
+
+@keyframes text-flow-animation {
+  to {
+    background-position: -200% center;
+  }
+}
